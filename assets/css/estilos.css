@@ -1,0 +1,316 @@
+@font-face {
+    font-family: 'acherus';
+    src: url('fonts/acherusgrotesque.woff2') format('woff2'),
+         url('fonts/acherusgrotesque.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.sel{
+    border: 1px solid red;
+}
+/*
+Colors
+    darkblue    #30323b
+    hiGreen     #10938a
+    ghostGreen  #96b9bb
+*/
+html,body{
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+html{
+    font-family: 'acherus';
+    font-weight: 100;
+    color: #30323b;
+}
+.landing{
+    display: flex;
+    flex-flow:row;
+    min-height: 99.99vh;
+}
+
+.landing article{
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+    flex-grow: 2;
+    flex-flow: column;
+}
+
+.landing article form{
+    display: flex;
+    flex-flow: column;
+    width: 73%;
+}
+
+.landing article form > *{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.landing article form span{
+    display: flex;
+    flex-flow: row;
+}
+
+.landing article form span figure{
+    margin: 0 .7rem;
+    width: 3rem;
+}
+
+.landing article form span figure svg{
+    width: 100%;
+}
+
+.landing article form span input{
+    background: transparent;
+    border: none;
+    border-left: 1px solid #10938a;
+    border-bottom: 1px solid #10938a;
+    color: #96b9bb;
+    padding: .5rem;
+    max-height: 2rem;
+    transition-property: border-color;
+    transition-duration: .6s;
+    transition-timing-function: ease-in-out;
+    will-change: border-color;
+    width: 60%;
+}
+
+.landing article form span:hover input{
+    border-color: #96b9bb;
+}
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #10938a;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+        color: #10938a;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+        color: #10938a;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        color: #10938a;
+    }
+.landing article form span.send{
+    justify-content: end;
+}
+.landing article form span.send figure{
+    width: 4rem;
+}
+.landing article form span.send button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.landing h1{
+    color: #96b9bb;
+    text-transform: uppercase;
+    text-rendering: geometricprecision;
+    margin: 0;
+}
+.logotipo{
+    text-align: center;
+}
+.logotipo img{
+    width: 80%;
+}
+.user-data{
+    background:#30323b;
+    color: #10938a;
+    justify-content: center;
+}
+.user-data h1{
+    margin-bottom: 2rem;
+}
+
+.shape{
+    position: absolute;
+    z-index: 5;
+}
+
+footer{
+    display: none;
+}
+
+.landing > article .shape{
+    bottom: 1rem;
+    display: inline-block;
+    left: 0;
+    overflow: hidden;
+    width: 12rem;
+}
+
+.landing article .shape img{
+    width: 100%;
+}
+
+.landing .user-data .shape{
+    bottom: unset;
+    top: 1rem;
+    right: 0;
+    left: unset;
+}
+
+.circle{
+    bottom: 0;
+    display: inline-block;
+    height: 114px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 53%;
+    width: 114px;
+}
+
+.user-icon svg .dude-body{
+    stroke-dasharray: 139px;
+    stroke-dashoffset: 279px;
+    transition-duration: .6s;
+    transition-delay: .3s;
+}
+
+.user-icon svg .dude-head{
+    stroke-dasharray: 79px;
+    stroke-dashoffset: 160px;
+    transition-duration: .8s;
+}
+
+.candado-icon svg .head-padlock{
+    stroke-dasharray: 53px;
+    stroke-dashoffset: 19px;
+    transition-duration: .8s;
+}
+.candado-icon svg path,
+.candado-icon svg rect{
+    transition-duration: .7s;
+}
+
+.send svg .arrow-circ{
+    stroke-dasharray: 155px;
+    stroke-dashoffset: -309px;
+    transition-duration: .8s;
+}
+
+.send svg .arrow-body{
+    stroke-dasharray: 47px;
+    stroke-dashoffset: -98px;
+    transition-duration: .7s;
+    transition-delay:.3s;
+}
+
+.send svg .arrow-head{
+    stroke-dasharray: 42px;
+    stroke-dashoffset: -81px;
+    transition-duration: .6s;
+    transition-delay:.5s;
+}
+
+.user-icon svg .dude-body,
+.user-icon svg .dude-head,
+.candado-icon svg path,
+.candado-icon svg rect,
+.send svg .arrow-circ,
+.send svg .arrow-body,
+.send svg .arrow-head{
+    transition-timing-function: ease-in-out;
+    transition-property: stroke-dashoffset,stroke;
+    will-change: stroke-dashoffset,stroke;
+}
+
+span:hover .user-icon svg .dude-body,
+span:hover .user-icon svg .dude-head,
+span:hover .candado-icon svg path,
+span:hover .candado-icon svg rect,
+button:hover svg .arrow-circ,
+button:hover svg .arrow-body,
+button:hover svg .arrow-head{
+    stroke-dashoffset: 0;
+    stroke:#96b9bb;
+}
+
+
+@media screen and (max-width:755px){
+    .logotipo{
+        text-align: center;
+        margin: 0 auto;
+        min-width: 15rem;
+        width: 73%;
+    }
+    .landing{
+        flex-flow: column;
+    }
+    .shape{
+        position: static;
+    }
+    .landing article{
+        overflow: hidden;
+        margin-top: 3rem;
+    }
+    .landing article .shape, .mobile .shape{
+        background: #10938a;
+        height: 5rem;
+        transform: rotate(8deg) translateY(4rem) scale(2);
+        -webkit-transform: rotate(8deg) translateY(4rem) scale(2);
+        width: 107%;
+    }
+    footer{
+        overflow: hidden;
+        display: initial;
+    }
+    .mobile .shape{
+        transform: rotate(368deg) translateY(-4rem) scale(2);
+        -webkit-transform: rotate(368deg) translateY(-4rem) scale(2);
+    }
+    .circle, .user-data form .shape{
+        display: none;
+    }
+
+    .user-data{
+        border-top: 7px solid #30323b;
+        box-shadow: inset 0 2px 0 0 #10938a;
+        padding: 3rem 1rem;
+        position: relative;
+        margin-top: 0!important;
+    }
+
+    .user-data::after{
+        content: '';
+        border-top: 2px solid #10938a;
+        background: #30323b;
+        display: inline-block;
+        height: 7px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .landing article form {
+        width: 100%;
+    }
+    .user-data form span{
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+
+    .user-data form span:not(.send) figure{
+        display: none;
+    }
+
+    .landing article form span.send figure {
+        width: 6rem;
+    }
+    .logo-wrap h1{
+        margin-bottom: 2rem;
+    }
+
+    .landing article form span input{
+        font-size: 1.15rem;
+        height: 2rem;
+    }
+}
