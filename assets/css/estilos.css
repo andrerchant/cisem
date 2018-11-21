@@ -314,3 +314,28 @@ button:hover svg .arrow-head{
         height: 2rem;
     }
 }
+
+/* END LANDING */
+/* START GLOBAL */
+
+body div#documenter_sidebar{
+    background: #30323b!important;
+    color:#96b9bb;
+    padding: 2rem;
+    width: 14rem;
+}
+
+#documenter_sidebar ol li a, #documenter_sidebar ol li a:hover{
+    color:#96b9bb!important;
+    background: transparent!important;
+    border:none!important;
+    border-bottom: 1px solid #10938a!important;
+    padding: 10px 8px 10px 8px;
+}
+
+#documenter_sidebar ol li a.current, #documenter_sidebar ol li a:hover{
+    color: #10938a!important;
+}
+
+
+
