@@ -400,7 +400,7 @@ body div#documenter_sidebar{
 
 #menu-back{
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 2rem;
     transition-property: transform,  -webkit-transform;
