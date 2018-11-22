@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'acherus';
-    src: url('fonts/acherusgrotesque.woff2') format('woff2'),
-         url('fonts/acherusgrotesque.woff') format('woff');
+    src: url('../css/fonts/acherusgrotesque.woff2') format('woff2'),
+         url('../css/fonts/acherusgrotesque.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,8 +20,9 @@ html,body{
     border: 0;
 }
 
-html{
-    font-family: 'acherus';
+html,html body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'acherus'!important;
     font-weight: 100;
     color: #30323b;
 }
@@ -100,10 +101,12 @@ html{
 .landing article form span.send figure{
     width: 4rem;
 }
+.send{
+    cursor: pointer;
+}
 .landing article form span.send button{
     background: transparent;
     border: none;
-    cursor: pointer;
     width: 100%;
 }
 
@@ -227,6 +230,9 @@ span:hover .user-icon svg .dude-body,
 span:hover .user-icon svg .dude-head,
 span:hover .candado-icon svg path,
 span:hover .candado-icon svg rect,
+div:hover svg .arrow-circ,
+div:hover svg .arrow-body,
+div:hover svg .arrow-head,
 button:hover svg .arrow-circ,
 button:hover svg .arrow-body,
 button:hover svg .arrow-head{
@@ -322,8 +328,19 @@ body div#documenter_sidebar{
     background: #30323b!important;
     color:#96b9bb;
     padding: 2rem;
+    overflow: hidden;
     width: 14rem;
+    transition-property: trasform, -webkit-transform;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 450ms;
+    transition-delay: 150ms;
 }
+
+#documenter_sidebar ol {
+    border-bottom: none;
+    height: unset;
+    overflow-x: hidden;
+ }
 
 #documenter_sidebar ol li a, #documenter_sidebar ol li a:hover{
     color:#96b9bb!important;
@@ -331,11 +348,77 @@ body div#documenter_sidebar{
     border:none!important;
     border-bottom: 1px solid #10938a!important;
     padding: 10px 8px 10px 8px;
+    transition-property: transform,-webkit-transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#documenter_sidebar ol li a:hover{
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
 }
 
 #documenter_sidebar ol li a.current, #documenter_sidebar ol li a:hover{
     color: #10938a!important;
 }
 
+#documenter_sidebar #documenter_logo{
+    background-image: url(../../assets/img/CISEM_logotipo.svg);
+    background-size: contain;
+    height: 11%;
+    width: 168px;
+}
 
+#documenter_sidebar .shape{
+    background: #10938a;
+    bottom: 0rem;
+    height: 10rem;
+    left: 0;
+    transform: skewY(15deg);
+    -webkit-transform: skewY(15deg);
+    width: 100%;
+}
 
+#documenter_sidebar.hidded{
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+#documenter_sidebar .send{
+    transform: scale(-0.8);
+    -webkit-transform: scale(-0.8);
+}
+
+#documenter_content{
+    transition: left ease .3s;
+    transition-delay: 200ms;
+}
+
+#documenter_sidebar.hidded + #documenter_content{
+    left: 0;
+}
+
+#menu-back{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    transition-property: transform,  -webkit-transform;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 300ms;
+    transform-origin: top;
+    transition-delay: 200ms;
+    transform:scaleY(0);
+    -webkit-transform:scaleY(0);
+    z-index: 25;
+}
+
+#menu-back:hover{
+    transform:scaleY(1.2);
+    -webkit-transform:scaleY(1.2);
+}
+
+#menu-back.hidded{
+    transform:scaleY(1);
+    -webkit-transform:scaleY(1);
+}
