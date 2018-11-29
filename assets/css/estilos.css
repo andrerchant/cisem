@@ -15,9 +15,15 @@ Colors
     ghostGreen  #96b9bb
 */
 html,body{
+    background: white;
     margin:0;
     padding: 0;
     border: 0;
+}
+
+h1{
+    font-weight: 100;
+    font-family: 'acherus;'
 }
 
 html,html body{
@@ -108,6 +114,7 @@ html,html body{
     background: transparent;
     border: none;
     width: 100%;
+    padding: 0;
 }
 
 .landing h1{
@@ -149,6 +156,8 @@ footer{
 }
 
 .landing article .shape img{
+    max-width: unset;
+    vertical-align: unset;
     width: 100%;
 }
 
@@ -266,8 +275,12 @@ button:hover svg .arrow-head{
         width: 107%;
     }
     footer{
+        background: unset;
+        border: none;
         overflow: hidden;
         display: initial;
+        margin: 0;
+        position: static;
     }
     .mobile .shape{
         transform: rotate(368deg) translateY(-4rem) scale(2);
@@ -351,6 +364,9 @@ body div#documenter_sidebar{
     transition-property: transform,-webkit-transform;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'acherus';
+    font-weight: 100;
 }
 
 #documenter_sidebar ol li a:hover{
@@ -371,12 +387,17 @@ body div#documenter_sidebar{
 
 #documenter_sidebar .shape{
     background: #10938a;
-    bottom: 0rem;
+    bottom: -5rem;
     height: 10rem;
     left: 0;
+    padding: 0!important;
     transform: skewY(15deg);
     -webkit-transform: skewY(15deg);
     width: 100%;
+}
+
+.send + .shape{
+    position: absolute!important;
 }
 
 #documenter_sidebar.hidded{
